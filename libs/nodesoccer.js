@@ -14,6 +14,22 @@ var board = new five.Board({
 board.on("ready", function() {
   var led = new five.Led("D7");
   led.blink();
+
+  servo1 = new five.Servo({
+    pin: 'A0',    
+    type: "continuous"
+  });
+
+  servo2 = new five.Servo({
+    pin: 'A4',    
+    type: "continuous"
+  });
+
+  board.repl.inject({
+    servo1: servo1,
+    servo2: servo2
+  });
+
 });
 
 
