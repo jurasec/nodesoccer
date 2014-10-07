@@ -30,6 +30,35 @@ board.on("ready", function() {
     servo2: servo2
   });
 
+  /* keypress, se ejecuta cuando se presiona una tecla */
+  process.stdin.on('keypress', function (ch, key) {
+    if ( key ){
+      switch ( key.name ){
+        case 'up':
+          console.log('=> Up:');
+          break;
+        case 'down':          
+          console.log('=> Down:');
+          break;
+        case 'left':
+          console.log('=> Left:');
+          break;
+        case 'right':
+          console.log('=>right');
+          break;
+        case 's':
+          console.log('=> Stoping...');
+          break;
+        case 'e':
+          process.exit(0);
+          break;          
+      }
+    }
+  });
+
+  process.stdin.setRawMode(true);
+  process.stdin.resume();
+
 });
 
 
