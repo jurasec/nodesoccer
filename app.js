@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var app = require('./libs/nodesoccer');
+var nodesoccer = require('./libs/nodesoccer');
 
 var app = express();
 
@@ -41,10 +41,10 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+        // res.render('error', {
+        //     message: err.message,
+        //     error: err
+        // });
     });
 }
 
