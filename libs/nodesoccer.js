@@ -36,18 +36,28 @@ board.on("ready", function() {
       switch ( key.name ){
         case 'up':
           console.log('=> Up:');
+          servo1.cw();  
+          servo2.ccw();
           break;
         case 'down':          
           console.log('=> Down:');
+          servo1.ccw();  
+          servo2.cw();
           break;
         case 'left':
           console.log('=> Left:');
+          servo1.ccw();  
+          servo2.ccw();
           break;
         case 'right':
           console.log('=>right');
+          servo1.cw();  
+          servo2.cw();          
           break;
         case 's':
           console.log('=> Stoping...');
+          servo1.stop();
+          servo2.stop();
           break;
         case 'e':
           process.exit(0);
