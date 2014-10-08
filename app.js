@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('express.io');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -11,6 +11,7 @@ var users = require('./routes/users');
 var nodesoccer = require('./libs/nodesoccer');
 
 var app = express();
+app.http().io();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
