@@ -3,6 +3,7 @@
  */
 var five = require("johnny-five");
 var Spark = require("spark-io");
+var keypress = require("keypress");
 var board = new five.Board({
   io: new Spark({
     token: "7550da40ccf9ac697211eb17c031bbe7ac16a20a",
@@ -29,6 +30,8 @@ board.on("ready", function() {
     servo1: servo1,
     servo2: servo2
   });
+  
+  keypress(process.stdin);
 
   /* keypress, se ejecuta cuando se presiona una tecla */
   process.stdin.on('keypress', function (ch, key) {
@@ -67,8 +70,5 @@ board.on("ready", function() {
   });
 
   process.stdin.setRawMode(true);
-  process.stdin.resume();
-
+  process.stdin.resume();  
 });
-
-
